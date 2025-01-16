@@ -1,0 +1,37 @@
+<nav class="navbar">
+  <div class="logo">
+    <a href="#">Furniture Store</a>
+  </div>
+  <!-- <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Products</a></li>
+    <li>
+      <a href="#">Categories</a>
+      <ul class="dropdown">
+        <li><a href="#">Living Room</a></li>
+        <li><a href="#">Bedroom</a></li>
+        <li><a href="#">Office</a></li>
+        <li><a href="#">Outdoor</a></li>
+      </ul>
+    </li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul> -->
+  <!-- <button class="cart-button">🛒 Cart</button> -->
+</nav>
+
+<div class="container">
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let product of products">
+      <img [src]="product.image" alt="{{ product.name }}" class="product-image" />
+      <div class="product-info">
+        <h2 class="product-name">{{ product.name }}</h2>
+        <p class="product-description">{{ product.description }}</p>
+        <p class="product-price">&#8377;  {{ product.price }}</p>
+        <a class="buy-button" [routerLink]="['/payment']" [queryParams]="{ name: product.name, price: product.price }">Buy Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

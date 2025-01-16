@@ -1,0 +1,97 @@
+.transaction-slip {
+    width: 500px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 20px auto;
+    border-radius: 5px;
+  }
+  
+  .transaction-header h4 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .transaction-details p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .transaction-details strong {
+    width: 170px;
+    display: inline-block;
+  }
+  
+  .transaction-footer {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 19px;
+    /* font-style: italic; */
+  }
+  
+  .alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+  
+  .alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
+  
+
+  .container {
+    max-width: 600px;
+  }
+
+  .card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+  }
+
+  .form-control {
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+  }
+
+  .form-control:focus {
+    border-color: #5A9EFB;
+    box-shadow: 0 0 10px rgba(90, 158, 251, 0.5);
+  }
+
+  .btn-primary {
+    background-color: #5A9EFB;
+    border-color: #5A9EFB;
+    font-weight: bold;
+  }
+
+  .btn-primary:hover {
+    background-color: #4A8FDA;
+    border-color: #4A8FDA;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 20px;
+  }
+.close:hover{
+  color:black;
+  font-weight: 50px;
+  font-size: 31px;
+}
+  
+img{
+  margin-left: 40px;
+  margin-right: 70px;
+}
+
+ul{
+  font-size: large;
+}

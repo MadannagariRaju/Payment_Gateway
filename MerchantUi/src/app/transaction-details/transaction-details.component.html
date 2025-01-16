@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <img src="https://cdn-icons-png.flaticon.com/512/1019/1019607.png" width="80px" height="80px" alt="">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active payhere" aria-current="page" routerLink="/payment">Pay Here</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link check" routerLink="/check">CheckStatus</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="transaction-container">
+  <h2 class="section-title">Search Transaction Details</h2>
+  
+  <!-- Search Bar Container -->
+  <div class="search-container">
+    <label for="transactionId" class="search-label">Enter Transaction ID:</label>
+    <input
+      id="transactionId"
+      type="text"
+      [(ngModel)]="transactionId"
+      placeholder="TXN123456789"
+      class="search-bar"
+      aria-label="Enter the transaction ID to search"
+    />
+    <button
+      (click)="fetchTransactionDetails()"
+      class="search-button"
+      [disabled]="!transactionId"
+      aria-label="Search transaction details"
+    >
+      Search
+    </button>
+  </div>
+
+  <!-- Display Transaction Details -->
+  <div *ngIf="transaction" class="result-container">
+    <h2 class="result-header">Transaction Details</h2>
+    <ul class="transaction-list">
+      <li class="transaction-item">
+        <span class="transaction-label">Transaction ID:</span>
+        <span class="transaction-value">{{ transaction.transactionId }}</span>
+      </li>
+      <li class="transaction-item">
+        <span class="transaction-label" >Status:</span>
+        
+          <!-- If Status is Failed, show in red -->
+        <span *ngIf="transaction.status === 'Failed'" class="transaction-value status-fail">
+          {{ transaction.status }}
+        </span>
+        
+        <!-- If Status is not Failed (Pass or any other value), show in green -->
+        <span *ngIf="transaction.status !== 'Failed'" class="transaction-value status-pass">
+          {{ transaction.status }}
+        </span>
+      </li>
+      <li class="transaction-item">
+        <span class="transaction-label">Order ID:</span>
+        <span class="transaction-value">{{ transaction.orderId }}</span>
+      </li>
+      <li class="transaction-item">
+        <span class="transaction-label">Customer Name:</span>
+        <span class="transaction-value">{{ transaction.customerName }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Display Error Message -->
+  <div *ngIf="error" class="error-message">
+    <p>{{ error }}</p>
+  </div>
+</div>

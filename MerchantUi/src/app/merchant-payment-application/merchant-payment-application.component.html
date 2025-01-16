@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <img src="https://cdn-icons-png.flaticon.com/512/1019/1019607.png" width="80px" height="80px" alt="">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active payhere" aria-current="page" routerLink="/payment">Pay Here</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/check">CheckStatus</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div *ngIf="successMessage" class="transaction-slip alert alert-success">
+  <div class="transaction-header">
+    <h4>Transaction Successful</h4>
+    <span class="close" (click)="closeSuccessMessage()">&#10005;</span>
+  </div>
+
+  <div class="transaction-details">
+    <p><strong>status:</strong> {{ successMessage.status }}</p>
+    <p><strong>Cardholder Name:</strong> {{ successMessage.cardholderName }}</p>
+    <p><strong>Order ID:</strong> {{ successMessage.orderId }}</p>
+    <p><strong>Message:</strong> {{ successMessage.message }}</p>
+    <p><strong>Transaction ID:</strong> {{ successMessage.transactionId }}</p>
+  </div>
+  
+  <div class="transaction-footer">
+    <p><strong>Thank you for your payment! 😃</strong></p>
+  </div>
+  <p>{{successMessage.dateTime}}</p>
+</div>
+
+<div *ngIf="errorMessage" class="alert alert-danger">
+  <div class="transaction-header">
+    <h4>Transaction Unsuccessful</h4>
+    <span class="close" (click)="closeErrorMessage()">&#10005;</span>
+  </div>
+  <strong>Error!</strong> {{ errorMessage }}
+</div>
+
+
+
+
+<div class="container mt-5">
+  <div class="card shadow-lg p-4 rounded">
+    <h2 class="text-center text-primary mb-4"><strong>Pay Here</strong></h2>
+    <form (ngSubmit)="onSubmit()">
+      
+      <div class="mb-3">
+        <label for="cardHolderName" class="form-label"><strong>Card Holder Name</strong></label>
+        <input type="text" class="form-control form-control-lg" id="cardHolderName" [(ngModel)]="form.cardHolderName" name="cardHolderName" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="amount" class="form-label"><strong>Price</strong></label>
+        <input type="number" class="form-control form-control-lg" id="amount" [(ngModel)]="amount" name="amount" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="cvv" class="form-label"><strong>CVV</strong></label>
+        <input type="number" class="form-control form-control-lg" id="cvv" [(ngModel)]="form.cvv" name="cvv" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="cardNumber" class="form-label"><strong>Card Number</strong></label>
+        <input type="number" class="form-control form-control-lg" id="cardNumber" [(ngModel)]="form.cardNumber" name="cardNumber" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="orderId" class="form-label"><strong>Product Name</strong></label>
+        <input type="text" class="form-control form-control-lg" id="orderId" [(ngModel)]="productName" name="orderId" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg btn-block mt-3"><strong>Pay</strong></button>
+    </form>
+  </div>
+</div>
+

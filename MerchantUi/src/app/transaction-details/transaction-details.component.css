@@ -1,0 +1,148 @@
+/* General container styling */
+.transaction-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title styling */
+  .section-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Search bar container */
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Label for search input */
+  .search-label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  /* Input field styling */
+  .search-bar {
+    padding: 8px;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  /* Button styling */
+  .search-button {
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .search-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Styling for result container */
+  .result-container {
+    margin-top: 20px;
+  }
+  
+  .result-header {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Transaction details list */
+  .transaction-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .transaction-list li {
+    margin: 8px 0;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f8d7da;
+    border-radius: 4px;
+    color: #721c24;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  
+  /* Styling for each transaction item */
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #ffffff;
+    /* border: 1px solid #ddd; */
+    border-radius: 4px;
+  }
+  
+  /* Label for transaction details */
+  .transaction-label {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+    width: 40%; /* Adjust width to allow space for the value */
+    margin-right: 10px; /* Space after the label */
+  }
+  
+  /* Value for transaction details */
+  .transaction-value {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    width: 55%; /* Adjust width to balance layout */
+    /* text-align: right; */
+  }
+  
+
+
+/* Styling for Failed status */
+.status-fail {
+    color: red; /* Red for Failed status */
+    font-weight: bold;
+  }
+  
+  /* Styling for non-Failed (Pass or any other status) */
+  .status-pass {
+    color: green; /* Green for Pass or any other non-Failed status */
+    font-weight: bold;
+  }
+
+  img{
+    margin-left: 40px;
+    margin-right: 70px;
+  }
+  
+  ul{
+    font-size: large;
+  }
